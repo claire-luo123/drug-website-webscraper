@@ -8,3 +8,4 @@ web scraper for medical drugs website to obtain data on side effects of medicati
 5. View the cookie created in the browser development tools tab.
 6. Copy and paste that cookie into scrape.js.
 7. run `node scrape.js`
+8. scrape.js will create a file called drugs.html, the scraped version of the website.
