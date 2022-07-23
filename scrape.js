@@ -1,7 +1,11 @@
 import fetch from 'node-fetch';
-import { writeFileSync } from 'fs';
+import { writeFileSync, readFileSync, readFile } from 'fs';
 
 const url = 'https://online.epocrates.com/drugs';
+
+function getCookie() {
+  return readFileSync('cookie.txt', 'utf-8');
+}
 
 async function scrape() {
     try {
@@ -17,7 +21,7 @@ async function scrape() {
     "sec-fetch-site": "same-origin",
     "sec-fetch-user": "?1",
     "upgrade-insecure-requests": "1",
-    "cookie": "COPY AND PASTE YOUR COOKIE HERE",
+    "Cookie": `${getCookie()}`,
     "Referer": "https://online.epocrates.com/",
     "Referrer-Policy": "strict-origin-when-cross-origin"
   },
